@@ -11,7 +11,8 @@ masterList["luke"] = {
 	luck: 7,
 	streak: 0,
 	player: false,
-	artA: "<pre>   ~~~~<br>  ~~o o<br>  _\\ -/_<br> / \\ /  \\<br>\\\\| |  |//<br> \\\\ |  //<br>  )===(I<br>  |_||_I<br>  (_)(_)<br>  |_||_|<br> /__][__\\<br></pre>"
+	artA: "<pre>   ~~~~<br>  ~~o o<br>  _\\ -/_<br> / \\ /  \\<br>\\\\| |  |//<br> \\\\ |  //<br>  )===(I<br>  |_||_I<br>  (_)(_)<br>  |_||_|<br> /__][__\\<br></pre>",
+	artB: "<pre>   ~~~~  +<br>  o o~~ //<br>  _\\-  //<br> / \\  //<br> \\__ //|<br>  --## |<br>  )===(|<br>  |_||_|<br>  (_)(_)<br>  |_||_|<br> /__][__\\<br></pre>",
 	}
 	masterList["darth"] = {
 	name: "Darth Vader",
@@ -22,6 +23,7 @@ masterList["luke"] = {
 	streak: 0,
 	player: false,
 	artA: "<pre>    .-.<br>   |_:_|<br>  /(_Y_)\\<br> (_\\/M\\/_)<br>  /.'-'.\\<br> //|[_]| \\ <br> \\ |   |//<br>  #|===|\\#<br> / |\\ /I \\<br>/_ | | I _\\<br>   |_|_|<br></pre>",
+	artB: "<pre>..  .-.  ..<br>|| |_:_| ||<br>||/(_Y_)\\||<br>||_\\/M\\/_||<br>|| .'-'. ||<br>||/|[_]|\\||<br>##/|   |\\##<br>## |===| ##<br> / |\\ /| \\<br>/_ | | | _\\<br>   |_|_|<br></pre>",
 	}
 	masterList["r2"] = {
 	name: "R2-D2",
@@ -31,7 +33,8 @@ masterList["luke"] = {
 	luck: 10,
 	streak: 0,
 	player: false,
-	artA: "<pre>           <br>           <br>    ___<br>   /() \\<br> _|_____|_<br>| | === | |<br>|_|  O  |_|<br> ||__O__||<br>|~ \\___/ ~|<br>/=\\ /=\\ /=\\<br>[_] [_] [_]<br></pre>"
+	artA: "<pre>           <br>           <br>    ___<br>   /() \\<br> _|_____|_<br>| | === | |<br>|_|  O  |_|<br> ||__O__||<br>|~ \\___/ ~|<br>/=\\ /=\\ /=\\<br>[_] [_] [_]<br></pre>",
+	artB: "<pre>           <br>     |# - -<br>    _|_<br>   / ()\\ <br> _|_____|_<br>| | === | |<br>|_|  O  |_|<br> ||__O__||<br>|~ \\___/ ~|<br>/=\\ /=\\ /=\\<br>[_] [_] [_]<br></pre>",
 	}
 	masterList["c3"] = {
 	name: "C3-PO",
@@ -42,6 +45,7 @@ masterList["luke"] = {
 	streak: 0,
 	player: false,
 	artA: "<pre>           <br>    /~\\<br>   ( oo|<br>  __\\=/__<br> //|/.\\|\\\\<br>|| |\\_/| ||<br>#  \\\\_//  #<br>   | | |<br>   |]|[|<br>   | | |<br>   /_][_\\<br></pre>",
+    artB: "<pre>           <br>  # /~\\   #<br> ||( oo| //<br> ||_\\=/_//<br>  \\|/.\\|/<br>   |\\_/|<br>   \\\\_//<br>   | | |<br>   |]|[|<br>   | | |<br>   /_][_\\<br></pre>",
     }
 
 var holder = {
@@ -134,7 +138,8 @@ else{
 
 		 strike = function(){
 		 	masterList[eList[eLoc.indexOf(select)]]["hp"] = masterList[eList[eLoc.indexOf(select)]]["hp"] - masterList[playerSelect]["attk"]
-
+		 	$(".fightE").html(masterList[eList[eLoc.indexOf(select)]]["artA"])
+		 	$(".fightP").html(masterList[playerSelect]["artB"])
 	     	$(".oneone").html('Opponent Attacking!'+'<br>'+'Player Health: '+masterList[playerSelect]["hp"] + '<br>'+'Enemy Health: '+masterList[eList[eLoc.indexOf(select)]]["hp"])
 	     	setTimeout ('defend();', 2000);
 	     }, 
@@ -143,7 +148,8 @@ else{
 	    defend = function(){
 	    	if(masterList[eList[eLoc.indexOf(select)]]["hp"] > 1){
 	     	masterList[playerSelect]["hp"] = masterList[playerSelect]["hp"] - masterList[eList[eLoc.indexOf(select)]]["attk"]
-
+			$(".fightE").html(masterList[eList[eLoc.indexOf(select)]]["artB"])
+			$(".fightP").html(masterList[playerSelect]["artA"])
 	     	$(".oneone").html('Attack Again!'+'<br>'+'Player Health: '+masterList[playerSelect]["hp"] + '<br>'+'Enemy Health: '+masterList[eList[eLoc.indexOf(select)]]["hp"])
 		}
 				else if (masterList[eList[eLoc.indexOf(select)]]["hp"] < 1){
