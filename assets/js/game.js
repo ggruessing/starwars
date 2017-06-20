@@ -53,7 +53,7 @@ var holder = {
 }
 
 var platform = {
-	artA: "<pre> =========<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[         ]<br>[_________]<br></pre>"
+	artA: "<pre> =========<br>[  ~      ]<br>[~    ~~  ]<br>[        ~]<br>[~        ]<br>[ ~~      ]<br>[      ~  ]<br>[   ~~    ]<br>[        ~]<br>[~~    ~  ]<br>[_________]<br></pre>"
 }
 var winCount = 0
 var chars = ["luke","darth","r2","c3"]
