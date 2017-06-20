@@ -1,0 +1,32 @@
+@font-face {
+    font-family: dos;
+    src: url(../font/dos.ttf);
+}
+
+pre{
+    display: block;
+    font-family: "dos";
+    padding: 0px;
+    margin: 0 0 0px;
+    font-size: 14px;
+    line-height: 1;
+    color: green;
+    word-break: normal;
+    word-wrap: normal;
+    background-color: black;
+    border: none;
+    border-radius: none;
+    white-space: pre;
+
+}
+
+body {
+	font-family: "dos";
+/*	text-align: center;*/
+	background-color: black;
+	color: green;
+}
+
+/*.b {
+	outline: 1px dashed red;
+}*/
